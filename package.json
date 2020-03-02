@@ -1,0 +1,35 @@
+{ 
+    "id": "com.jurongport-v.dev", 
+    "schemaVersion": 1, 
+    "version": "1",
+    "minorVersion":  102,
+    "providerName": "KloudyNet Technologies", 
+    "displayName": "Vessel Pre-Arrival Information", 
+    "description": "Details of Vessel Pre-Arrival Information", 
+    "icon": "icon.png", 
+	"appModel": "AppModel.json", 
+	"actionScope":"Group",
+	"views": { 
+		"CreationView": {
+			"labelHeader": "Vessel Pre-Arrival Information", 
+			"sourceLocation": "ResponseView.html",
+			"showNativeToolbar": true
+		}, 
+		"ChatCanvasCardView": { 
+			"showHeader": true,
+			"labelResponseSending": "ChatCanvasCardView",
+			"labelResponded": "You have provided a new request", 
+			"labelResponseFailed": "Feedback submission failed",
+			"isResponseEditable": false,
+			"showLikes" : false,
+			"showComments": false,
+			"showExpiry" : false
+		}
+	},
+	"externalUrls": [
+		{ "url" : "https://jurongportdemo.azurewebsites.net/api/vasselinfomation/" },
+		{ "url" : "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"},
+		{ "url" : "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"},
+		{ "url" : "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"}
+	  ] 
+}

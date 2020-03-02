@@ -1,0 +1,325 @@
+<html>
+
+<head>
+  <title>Jurong Port</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="KASClient.js"></script>
+  <script type="text/javascript" src="ResponseView.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="wait" style="display:none;width:69px;height:89px;position:absolute;top:50%;left:40%;padding:2px;">
+      <img src='ajax-loader.gif' width="100" height="100" /><br>
+    </div>
+    <div class="row">
+      <table class="points_table">
+        <thead class="stickyHeader">
+          <tr>
+            <th class="col-xs-6">Description</th>
+            <th class="col-xs-6">Details</th>
+          </tr>
+        </thead>
+
+        <tbody class="points_table_scrollbar">
+          <tr class="odd">
+            <td class="col-xs-6">Vessel Name</td>
+            <td class="col-xs-6" id="vesselName"></td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-6">Voyage In / Out</td>
+            <td class="col-xs-6" id="voyageInOut"></td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-6">Berth Number</td>
+            <td class="col-xs-6" id="berthNumber"></td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-6">Agent Name</td>
+            <td class="col-xs-6" id="agentName"></td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#stevedoreNameAccordian">
+                      Stevedore Name</a>
+                  </div>
+                  <div id="stevedoreNameAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables-single">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="stevedoreName">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#consigneeAccordian">
+                      Consignee</a>
+                  </div>
+                  <div id="consigneeAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables-single">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="consignee">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-6">Estimate Time of Berthing</td>
+            <td class="col-xs-6" id="estimateTimeOfBerting"></td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-6">Estimate Time of Unberthing</td>
+            <td class="col-xs-6" id="estimateTimeOfUnberting"></td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-6">Vessel LOA</td>
+            <td class="col-xs-6" id="vesselLoa"></td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-6">Vessel DWT</td>
+            <td class="col-xs-6" id="vesselDwt"></td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-6">Vessel Berthing Position</td>
+            <td class="col-xs-6" id="vesselBertingPosition"></td>
+          </tr>
+         
+          <tr class="even">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#berthWHartMarkFromToAccordian">
+                      Berth Wharf Mark From-To</a>
+                  </div>
+                  <div id="berthWHartMarkFromToAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables-single">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="berthWHartMarkFromTo">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#modeOfOperationAccordian">
+                      Mode of Operation</a>
+                  </div>
+                  <div id="modeOfOperationAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row" >
+                          <div id="no-more-tables-single">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="modeOfOperation">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#fuelBunkeringAccordian">
+                      Fuel Bunkering</a>
+                  </div>
+                  <div id="fuelBunkeringAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="fuelBunkering">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#waterBunkeringAccordian">
+                      Water Bunkering</a>
+                  </div>
+                  <div id="waterBunkeringAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row" style="display: inherit">
+                          <div id="no-more-tables">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="waterBunkering">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="even">
+            <td class="col-xs-6">Last Port of Call</td>
+            <td class="col-xs-6" id="lastPortOfCall"></td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-6">Next Port of Call</td>
+            <td class="col-xs-6" id="nextPortOfCall"></td>
+          </tr>
+         
+          <tr class="even">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#anchorageToJpAccordian">Pilot Timings from Anchorage to JP</a>
+                  </div>
+                  <div id="anchorageToJpAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="anchorageToJp">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="odd">
+            <td class="col-xs-12" style="width:100%; height:auto">
+              <div class="accordion">
+                <div class="accordion-group">
+                  <div class="accordion-heading country">
+                    <a style="text-decoration: none !important; color:#5DBCD2" class="accordion-toggle text-align left"
+                      data-toggle="collapse" href="#jpToAnchorageAccordian">Pilot Timings from JP to Anchorage</a>
+                  </div>
+                  <div id="jpToAnchorageAccordian" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                      <div class="container">
+                        <div class="row">
+                          <div id="no-more-tables">
+                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                              <tbody id="jpToAnchorage">
+                                <!--Code generated from JS-->
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+     
+
+      <div class="col text-center stickyFooter" style="background: #5dbcd2">
+        <button onclick="KASClient.App.dismissCurrentScreen()" style="color: #fff"
+          class="btn btn-default">close</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
